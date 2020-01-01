@@ -7,13 +7,13 @@
 Summary:	Sphinx extension for Read the Docs overrides
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa do modyfikacji Read the Docs
 Name:		python-readthedocs-sphinx-ext
-Version:	1.0.0
-Release:	2
+Version:	1.0.1
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/readthedocs-sphinx-ext/
 Source0:	https://files.pythonhosted.org/packages/source/r/readthedocs-sphinx-ext/readthedocs-sphinx-ext-%{version}.tar.gz
-# Source0-md5:	8a2910e97ba65a22a288cb040425c297
+# Source0-md5:	3ba91abb07855e766dd2e5d443a20e7a
 URL:		https://pypi.org/project/readthedocs-sphinx-ext/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
