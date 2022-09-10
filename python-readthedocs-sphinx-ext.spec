@@ -7,16 +7,16 @@
 Summary:	Sphinx extension for Read the Docs overrides
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa do modyfikacji Read the Docs
 Name:		python-readthedocs-sphinx-ext
-Version:	1.0.4
-Release:	2
+Version:	2.1.8
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/readthedocs-sphinx-ext/
 Source0:	https://files.pythonhosted.org/packages/source/r/readthedocs-sphinx-ext/readthedocs-sphinx-ext-%{version}.tar.gz
-# Source0-md5:	75df245a0f1dbe317ce483feba8483d7
+# Source0-md5:	ecaaee440cb231bab66328c09b120567
 URL:		https://pypi.org/project/readthedocs-sphinx-ext/
 %if %{with python2}
-BuildRequires:	python-modules >= 1:2.5
+BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-Sphinx
@@ -25,7 +25,7 @@ BuildRequires:	python-requests
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.2
+BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-Sphinx
@@ -35,7 +35,7 @@ BuildRequires:	python3-requests
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	python-modules >= 1:2.5
+Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,7 +49,7 @@ Ten moduł dodaje rozszerzenia ułatwiające używanie Sphinksa.
 Summary:	Sphinx extension for Read the Docs overrides
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa do modyfikacji Read the Docs
 Group:		Libraries/Python
-Requires:	python3-modules >= 1:3.2
+Requires:	python3-modules >= 1:3.6
 
 %description -n python3-readthedocs-sphinx-ext
 This module adds extensions that make Sphinx easier to use.
