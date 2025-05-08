@@ -7,13 +7,13 @@
 Summary:	Sphinx extension for Read the Docs overrides
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa do modyfikacji Read the Docs
 Name:		python-readthedocs-sphinx-ext
-Version:	2.1.8
-Release:	3
+Version:	2.2.5
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/readthedocs-sphinx-ext/
 Source0:	https://files.pythonhosted.org/packages/source/r/readthedocs-sphinx-ext/readthedocs-sphinx-ext-%{version}.tar.gz
-# Source0-md5:	ecaaee440cb231bab66328c09b120567
+# Source0-md5:	822b8481398c118b9f5ab1ccabf7661d
 URL:		https://pypi.org/project/readthedocs-sphinx-ext/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
@@ -62,11 +62,23 @@ Ten moduł dodaje rozszerzenia ułatwiające używanie Sphinksa.
 
 %build
 %if %{with python2}
-%py_build %{?with_tests:test}
+%py_build
+%if %{with tests}
+# use explicit plugins list for reliable builds (delete PYTEST_PLUGINS if empty)
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+PYTEST_PLUGINS= \
+%{__python} -m pytest tests
+%endif
 %endif
 
 %if %{with python3}
-%py3_build %{?with_tests:test}
+%py3_build
+%if %{with tests}
+# use explicit plugins list for reliable builds (delete PYTEST_PLUGINS if empty)
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+PYTEST_PLUGINS= \
+%{__python3} -m pytest tests
+%endif
 %endif
 
 %install
